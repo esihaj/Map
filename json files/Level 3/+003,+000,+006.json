@@ -1,0 +1,15 @@
+{"type": "FeatureCollection",
+"bbox" : [504912.32, 3955972.51, 511530.30, 3960045.98],
+"center" : [508221.31, 3958009.25],
+"features": [
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 24},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[506366.55, 3956471.02],[506298.41, 3956526.01],[506006.63, 3956679.69],[505879.93, 3956755.00],[505305.40, 3957081.38],[504973.36, 3957268.13],[504957.32, 3957279.47],[504913.13, 3957301.96],[504912.32, 3957302.40]]}
+		]
+	}
+}
+]
+}

@@ -1,0 +1,805 @@
+{"type": "FeatureCollection",
+"bbox" : [511530.30, 3951899.04, 518148.28, 3955972.51],
+"center" : [514839.29, 3953935.78],
+"features": [
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 7},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[511522.27, 3953702.40],[511588.77, 3953608.53],[511765.63, 3953403.65],[511928.57, 3953223.25],[512038.58, 3953106.64],[512251.27, 3952910.09],[512372.03, 3952792.01],[512534.85, 3952646.31],[512576.41, 3952612.08],[512607.21, 3952585.19],[512680.55, 3952531.90],[512779.31, 3952466.14],[512874.65, 3952408.93],[513070.23, 3952316.04],[513357.72, 3952188.67],[513581.65, 3952101.15],[513621.73, 3952089.37]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 9},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513693.02, 3952088.04],[513681.20, 3952104.06],[513650.26, 3952119.53],[513531.50, 3952168.90],[513370.43, 3952232.83],[513284.89, 3952272.19],[513027.81, 3952386.40],[512899.95, 3952450.55],[512787.56, 3952517.44],[512657.43, 3952608.67],[512554.60, 3952690.34],[512301.61, 3952925.81],[512212.43, 3953014.31],[512032.25, 3953181.29],[511808.39, 3953432.23],[511732.12, 3953515.41]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 46},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[514519.54, 3955014.22],[514585.63, 3954960.25],[514867.89, 3954824.65],[515442.97, 3954542.39],[515538.30, 3954492.73]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 75},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[514242.68, 3951882.36],[513869.34, 3952031.60],[513836.36, 3952042.64],[513808.37, 3952048.33],[513787.52, 3952050.33]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 282},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512877.64, 3955646.34],[512816.64, 3955667.36],[512741.35, 3955683.01],[512725.84, 3955683.67],[512630.49, 3955691.57],[512469.53, 3955675.75],[512447.60, 3955674.77],[512361.69, 3955661.28],[512361.02, 3955661.18],[512360.34, 3955661.07]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 303},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513927.29, 3952404.67],[513905.40, 3952380.27],[513866.20, 3952321.82],[513849.80, 3952304.72],[513827.71, 3952291.17],[513795.63, 3952278.34],[513702.26, 3952251.26],[513650.23, 3952217.76],[513624.57, 3952199.94],[513595.34, 3952188.53],[513558.28, 3952182.12],[513500.90, 3952181.77],[513500.42, 3952181.74]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 542},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[514081.18, 3955243.59],[514032.81, 3955281.89],[513952.76, 3955333.35],[513932.97, 3955350.95],[513917.57, 3955375.14],[513914.06, 3955405.92],[513915.81, 3955451.44],[513922.47, 3955488.14],[513927.21, 3955532.34]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 622},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517227.75, 3953583.79],[517240.40, 3953611.39],[517249.60, 3953624.03],[517277.19, 3953633.23],[517295.59, 3953634.38],[517312.83, 3953629.78],[517340.43, 3953614.83],[517487.59, 3953556.20],[517532.13, 3953544.55]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 651},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517007.77, 3953799.54],[517115.08, 3953734.41],[517142.67, 3953720.61],[517182.91, 3953688.42],[517194.41, 3953673.47],[517201.31, 3953655.07],[517202.11, 3953570.39],[517201.37, 3953564.72]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 691},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513889.95, 3952023.50],[513865.11, 3952049.42],[513854.76, 3952065.21],[513846.63, 3952084.84],[513844.23, 3952103.51],[513846.15, 3952124.10],[513900.24, 3952304.82],[513906.09, 3952322.74]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 782},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513663.66, 3952112.83],[513653.86, 3952132.79],[513650.44, 3952162.93],[513655.58, 3952176.29],[513663.45, 3952189.98],[513676.81, 3952200.94],[513692.56, 3952207.79],[513712.77, 3952212.24],[513732.97, 3952211.56],[513750.78, 3952204.03],[513763.45, 3952193.75],[513772.70, 3952180.74],[513779.21, 3952154.37],[513773.04, 3952117.38],[513767.49, 3952090.83]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : "","name" : "","id" : 919},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[512411.59, 3955647.37],[512503.88, 3955637.68],[512540.08, 3955632.23],[512677.92, 3955621.79],[512678.02, 3955621.73]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1167},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512804.84, 3955768.13],[512744.77, 3955766.19],[512691.86, 3955770.79],[512682.21, 3955760.64],[512663.88, 3955737.84],[512652.95, 3955715.75],[512625.13, 3955692.69],[512623.27, 3955691.15]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : " ","name" : " ","id" : 1213},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[517783.55, 3953751.58]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : " ","name" : " ","id" : 1220},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[517778.23, 3953784.35],[517761.10, 3953776.12],[517756.84, 3953771.45],[517750.14, 3953751.52],[517751.33, 3953742.53],[517759.41, 3953728.28],[517772.60, 3953719.82],[517791.38, 3953718.92],[517804.51, 3953725.40],[517815.45, 3953741.55],[517816.91, 3953752.50],[517812.94, 3953767.20],[517808.43, 3953773.64],[517791.89, 3953783.71],[517785.58, 3953784.71],[517778.23, 3953784.35]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1330},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513779.82, 3955373.08],[513824.29, 3955332.45],[513834.33, 3955315.05],[513837.84, 3955282.23],[513840.42, 3955215.30],[513839.64, 3955198.27]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1331},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512005.91, 3954060.19],[511952.17, 3954083.39],[511859.29, 3954105.86],[511820.29, 3954124.96]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1332},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[515655.54, 3953220.72],[515641.03, 3953233.14],[515562.41, 3953251.08],[515471.02, 3953282.80],[515470.80, 3953283.25],[515470.61, 3953283.64]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 1336},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513621.73, 3952089.37],[513652.78, 3952069.69],[513672.39, 3952053.10],[513683.70, 3952036.89],[513690.86, 3952019.54],[513695.01, 3951997.30],[513693.13, 3951970.53],[513683.82, 3951925.03]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1337},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516809.20, 3952953.71],[516791.01, 3952968.39],[516640.60, 3953005.52],[516625.47, 3953016.29]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : "جهاد","name" : " ","id" : 1378},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[516923.25, 3953444.20]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : "جهاد","name" : " ","id" : 1388},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[516927.70, 3953409.43],[516931.18, 3953416.52],[516942.44, 3953471.88],[516940.79, 3953477.22],[516936.79, 3953482.02],[516927.02, 3953483.40],[516923.53, 3953481.59],[516915.04, 3953471.50],[516912.12, 3953458.34],[516904.39, 3953423.57],[516906.90, 3953408.73],[516910.39, 3953406.04],[516924.20, 3953406.91],[516927.70, 3953409.43]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : " ","name" : " ","id" : 1409},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[513991.49, 3955831.53]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : " ","name" : " ","id" : 1423},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[514004.81, 3955858.68],[513995.44, 3955861.23],[513964.41, 3955847.22],[513959.63, 3955829.35],[513979.93, 3955804.13],[513989.73, 3955801.58],[514020.04, 3955817.74],[514022.62, 3955833.56],[514004.81, 3955858.68]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1470},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513851.62, 3955196.84],[513865.24, 3955226.50],[513887.22, 3955249.43],[513917.35, 3955267.51],[513948.82, 3955271.53],[513970.91, 3955270.19],[513997.90, 3955266.46]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : "دانش","name" : " ","id" : 1781},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[514278.21, 3955766.18]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : "دانش","name" : " ","id" : 1793},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[514301.12, 3955766.07],[514296.98, 3955779.22],[514294.41, 3955782.28],[514280.20, 3955788.90],[514276.20, 3955788.90],[514261.99, 3955782.28],[514259.84, 3955779.77],[514257.43, 3955775.76],[514256.06, 3955760.14],[514257.43, 3955756.38],[514268.51, 3955745.29],[514272.27, 3955743.93],[514287.89, 3955745.29],[514291.35, 3955747.29],[514294.41, 3955749.86],[514301.03, 3955764.07],[514301.12, 3955766.07]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 1896},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512361.61, 3952639.80],[512454.40, 3952694.49],[512467.92, 3952696.95],[512481.14, 3952694.80]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2014},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[514542.78, 3953455.69],[514570.20, 3953444.53],[514627.30, 3953425.75],[514657.41, 3953413.63],[514659.65, 3953412.56]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2016},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516478.59, 3953027.96],[516363.93, 3953076.72],[516478.59, 3953027.96],[516363.93, 3953076.72]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2023},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517561.42, 3952802.46],[517509.48, 3952804.80],[517458.65, 3952812.21],[517438.15, 3952813.11]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : " ","name" : " ","id" : 2034},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[514798.80, 3954319.40]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : " ","name" : " ","id" : 2048},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[514811.35, 3954334.17],[514798.24, 3954338.77],[514794.58, 3954338.31],[514782.63, 3954330.13],[514780.82, 3954326.72],[514780.92, 3954311.77],[514782.73, 3954308.45],[514792.20, 3954301.09],[514797.00, 3954300.02],[514811.66, 3954304.82],[514815.06, 3954308.77],[514817.63, 3954324.06],[514814.85, 3954330.27],[514813.34, 3954332.22],[514811.35, 3954334.17]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2202},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516170.62, 3953121.25],[516061.76, 3953125.58],[516170.62, 3953121.25],[516061.76, 3953125.58]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2205},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512913.82, 3952408.45],[513003.55, 3952347.02],[512913.82, 3952408.45],[513003.55, 3952347.02]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2288},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517443.14, 3952791.51],[517473.45, 3952777.90],[517519.84, 3952763.84],[517533.66, 3952754.46],[517538.51, 3952751.82]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2367},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513680.04, 3953638.65],[513715.50, 3953640.21],[513778.90, 3953631.09]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2386},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512428.66, 3952740.40],[512430.75, 3952732.13],[512424.91, 3952718.61],[512417.84, 3952704.79],[512400.94, 3952682.36],[512382.51, 3952656.40]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2442},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516670.77, 3953849.25],[516687.98, 3953873.63],[516707.49, 3953888.85],[516731.27, 3953896.94],[516746.67, 3953900.18]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2451},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[515334.87, 3953259.70],[515348.88, 3953262.08],[515427.88, 3953253.08],[515429.16, 3953253.20]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2535},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512530.60, 3952813.09],[512524.77, 3952814.94],[512514.63, 3952809.10],[512447.64, 3952790.66],[512444.95, 3952790.76]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2584},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512414.64, 3953988.14],[512354.62, 3953986.34],[512326.60, 3953986.38]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2627},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[514761.66, 3953446.10],[514676.30, 3953445.55],[514761.66, 3953446.10],[514676.30, 3953445.55]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2652},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512104.41, 3953091.66],[512055.64, 3953159.77],[512104.41, 3953091.66],[512055.64, 3953159.77]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2701},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513965.52, 3953608.76],[513893.70, 3953647.15],[513965.52, 3953608.76],[513893.70, 3953647.15]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2702},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516637.55, 3953950.38],[516652.80, 3953935.94],[516664.68, 3953911.69],[516666.59, 3953886.48],[516666.73, 3953878.42]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "freeway","fname" : " ","name" : " ","id" : 2733},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[513846.14, 3955340.65],[513918.04, 3955305.50],[513846.14, 3955340.65],[513918.04, 3955305.50]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "freeway","fname" : " ","name" : " ","id" : 2809},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[513921.44, 3955321.65],[513852.38, 3955355.41],[513921.44, 3955321.65],[513852.38, 3955355.41]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2813},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516236.82, 3953064.03],[516307.41, 3953034.28],[516236.82, 3953064.03],[516307.41, 3953034.28]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 2839},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517355.77, 3953881.65],[517321.87, 3953918.74],[517318.59, 3953929.75],[517317.65, 3953940.75],[517317.70, 3953943.35]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "bystreet","fname" : " ","name" : " ","id" : 2884},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[514575.73, 3955826.38],[514565.67, 3955829.14],[514502.13, 3955826.97]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "bystreet","fname" : " ","name" : " ","id" : 2966},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[514504.50, 3955818.49],[514558.75, 3955820.98],[514574.38, 3955820.73]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "freeway","fname" : " ","name" : " ","id" : 2992},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[517197.35, 3953707.42],[517259.34, 3953677.30],[517197.35, 3953707.42],[517259.34, 3953677.30]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "freeway","fname" : " ","name" : " ","id" : 2994},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[517262.80, 3953693.42],[517200.85, 3953723.52],[517262.80, 3953693.42],[517200.85, 3953723.52]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3000},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512101.71, 3954017.63],[512164.19, 3953989.33],[512101.71, 3954017.63],[512164.19, 3953989.33]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3027},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517517.09, 3955119.94],[517536.14, 3955137.51],[517541.66, 3955138.89],[517552.16, 3955125.63],[517561.28, 3955109.60],[517561.58, 3955109.22]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3085},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[513428.82, 3953711.41],[513469.25, 3953695.61],[513486.85, 3953682.32]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3089},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517243.04, 3953897.48],[517262.21, 3953876.10],[517272.33, 3953859.98],[517278.71, 3953843.95]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3105},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517545.32, 3955177.28],[517540.01, 3955156.57],[517529.23, 3955138.61],[517517.09, 3955119.94]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : " ","name" : " ","id" : 3236},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[516442.18, 3952371.02]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : " ","name" : " ","id" : 3260},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[516442.24, 3952381.24],[516435.39, 3952378.16],[516433.04, 3952372.69],[516433.68, 3952368.50],[516436.10, 3952365.05],[516440.11, 3952362.94],[516444.36, 3952362.91],[516450.66, 3952367.92],[516451.46, 3952373.47],[516449.54, 3952377.77],[516446.70, 3952380.13],[516444.98, 3952380.84],[516442.24, 3952381.24]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3271},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[516539.18, 3952981.71],[516596.83, 3952980.86],[516539.18, 3952981.71],[516596.83, 3952980.86]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : " ","name" : " ","id" : 3394},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[512687.38, 3955618.22]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : " ","name" : " ","id" : 3421},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[512696.45, 3955623.63],[512686.11, 3955625.88],[512682.53, 3955624.83],[512679.30, 3955623.22],[512677.56, 3955620.27],[512679.70, 3955616.29],[512689.51, 3955613.31],[512693.54, 3955614.66],[512696.86, 3955621.47],[512696.79, 3955622.76],[512696.45, 3955623.63]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3446},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512561.17, 3953897.55],[512611.58, 3953899.27],[512561.17, 3953897.55],[512611.58, 3953899.27]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "mainstreet","fname" : " ","name" : " ","id" : 3481},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[513753.86, 3952027.48],[513776.12, 3952071.66],[513753.86, 3952027.48],[513776.12, 3952071.66]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "freeway","fname" : " ","name" : " ","id" : 3485},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[512666.41, 3955647.28],[512715.63, 3955644.23],[512666.41, 3955647.28],[512715.63, 3955644.23]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "mainstreet","fname" : " ","name" : " ","id" : 3501},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[513760.37, 3952076.80],[513738.11, 3952033.65],[513760.37, 3952076.80],[513738.11, 3952033.65]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "mainstreet","fname" : " ","name" : " ","id" : 3623},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[515094.16, 3954918.76],[515076.32, 3954879.43],[515094.16, 3954918.76],[515076.32, 3954879.43]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "mainstreet","fname" : " ","name" : " ","id" : 3627},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[515082.39, 3954880.39],[515100.70, 3954919.29],[515082.39, 3954880.39],[515100.70, 3954919.29]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "freeway","fname" : " ","name" : " ","id" : 3653},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[512714.04, 3955660.38],[512672.29, 3955663.20],[512714.04, 3955660.38],[512672.29, 3955663.20]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3781},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517296.12, 3953851.82],[517311.22, 3953870.66],[517318.78, 3953877.22]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "highway","fname" : " ","name" : " ","id" : 3879},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[512483.59, 3952733.49],[512463.75, 3952752.09],[512483.59, 3952733.49],[512463.75, 3952752.09]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "highway","fname" : " ","name" : " ","id" : 3882},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "bridge"},"type" : "LineString","coordinates" : [[512452.99, 3952740.09],[512472.76, 3952721.79],[512452.99, 3952740.09],[512472.76, 3952721.79]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 3908},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[512460.29, 3952776.53],[512458.75, 3952782.61],[512463.56, 3952789.91],[512470.57, 3952795.95]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "ازاد شهر- پیکان شهر","name" : "","id" : 3998},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[516479.39, 3954954.12]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "ویلا شهر","name" : "","id" : 3999},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[515812.49, 3953765.78]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "شهرک شهرداری","name" : "","id" : 4000},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[516419.66, 3953549.12]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "شهرک غزالی","name" : "","id" : 4001},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[514499.15, 3954233.05]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "وردآورد","name" : "","id" : 4002},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[511837.33, 3954877.22]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "شهرک دانشگاه تهران","name" : "","id" : 4008},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[517924.12, 3951973.34]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "چیتگرشمالی","name" : "","id" : 4014},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[516858.09, 3953398.60]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "چیتگرجنوبی","name" : "","id" : 4015},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[514503.32, 3952679.15]]
+	}
+}
+]
+}

@@ -1,0 +1,51 @@
+{"type": "FeatureCollection",
+"bbox" : [504912.32, 3955972.51, 518148.28, 3964119.46],
+"center" : [511530.30, 3960045.98],
+"features": [
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 24},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[506366.55, 3956471.02],[504913.13, 3957301.96],[504912.32, 3957302.40]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 356},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[517309.69, 3956909.71],[517718.44, 3957034.18],[517741.50, 3957038.95],[517762.92, 3957043.44]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 551},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[518089.87, 3957108.35],[518093.91, 3957103.39],[518056.63, 3957087.20],[517859.23, 3957039.07],[517823.17, 3957014.93],[517811.25, 3956983.45],[517804.37, 3956959.40]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "شهرک شهید باقری","name" : "","id" : 3989},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[516518.42, 3956940.61]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "region","fname" : "شهرک دانشگاه صنعتی شریف","name" : "","id" : 3997},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[512515.93, 3956265.82]]
+	}
+}
+]
+}

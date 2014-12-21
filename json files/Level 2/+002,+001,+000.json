@@ -1,0 +1,41 @@
+{"type": "FeatureCollection",
+"bbox" : [518148.28, 3931531.69, 531384.25, 3939678.63],
+"center" : [524766.26, 3935605.16],
+"features": [
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : "فردوسی","name" : "Ferdosi","id" : 1550},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[527639.71, 3936154.48]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : "فردوسی","name" : "Ferdosi","id" : 1558},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[527666.32, 3936156.55],[527666.27, 3936157.99],[527641.00, 3936181.00],[527613.66, 3936160.65],[527626.81, 3936130.65],[527662.01, 3936139.27],[527666.49, 3936152.45],[527666.32, 3936156.55]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "POI_square","fname" : " ","name" : " ","id" : 2038},
+	"geometry" : {"type" : "MultiPoint",
+		"coordinates" : [[527345.11, 3938786.75]]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1100)","fname" : " ","name" : " ","id" : 2051},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"type" : "LineString","coordinates" : [[527353.27, 3938769.57],[527355.84, 3938770.90],[527354.98, 3938803.82],[527325.81, 3938788.17],[527352.23, 3938769.03],[527353.27, 3938769.57]]}
+		]
+	}
+}
+]
+}

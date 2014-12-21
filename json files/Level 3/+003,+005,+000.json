@@ -1,0 +1,86 @@
+{"type": "FeatureCollection",
+"bbox" : [538002.23, 3931531.69, 544620.21, 3935605.16],
+"center" : [541311.22, 3933568.42],
+"features": [
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 313},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544357.55, 3932598.67],[544367.30, 3932558.99],[544372.15, 3932506.34],[544377.68, 3932475.17],[544377.00, 3932443.99],[544382.54, 3932374.72],[544384.62, 3932229.24],[544374.92, 3932192.53],[544354.82, 3932150.27],[544340.62, 3932109.43]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 411},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544329.19, 3932091.23],[544367.30, 3932124.98],[544410.94, 3932179.71],[544442.81, 3932208.11],[544459.43, 3932216.43],[544512.78, 3932222.66],[544597.99, 3932224.05],[544625.01, 3932219.89]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 420},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544624.78, 3932593.03],[544604.43, 3932584.76],[544562.03, 3932577.87],[544502.05, 3932575.11],[544457.92, 3932574.07],[544406.21, 3932587.17],[544367.93, 3932613.37],[544353.32, 3932621.71]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 836},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544487.68, 3932339.11],[544474.12, 3932331.72],[544463.09, 3932321.72],[544436.55, 3932321.37],[544426.19, 3932325.17],[544417.24, 3932333.10],[544408.28, 3932347.23],[544402.42, 3932365.85],[544401.73, 3932398.60],[544403.79, 3932416.87],[544414.14, 3932443.76],[544423.79, 3932451.00],[544436.19, 3932455.83],[544462.06, 3932453.76],[544473.78, 3932448.24],[544491.02, 3932434.11],[544496.80, 3932431.38]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 869},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544566.36, 3932456.25],[544604.78, 3932470.65],[544620.99, 3932470.65]]},
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544628.56, 3932349.99],[544618.92, 3932346.54],[544584.79, 3932355.85],[544579.27, 3932361.71],[544565.60, 3932368.97]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 1174},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544580.74, 3932477.66],[544581.34, 3932515.29],[544572.72, 3932534.26],[544560.65, 3932545.29],[544547.21, 3932552.53],[544526.87, 3932554.25],[544516.53, 3932552.53],[544493.77, 3932535.63],[544488.60, 3932524.95],[544482.74, 3932504.95],[544483.78, 3932484.96],[544481.47, 3932468.72]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 1197},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544588.59, 3932318.74],[544589.61, 3932299.83],[544587.19, 3932288.80],[544580.31, 3932276.04],[544569.27, 3932264.66],[544554.44, 3932256.39],[544535.14, 3932251.56],[544512.73, 3932260.18],[544499.63, 3932272.94],[544491.02, 3932293.62],[544488.94, 3932324.30],[544492.74, 3932342.58],[544490.86, 3932343.84]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "highway","fname" : " ","name" : " ","id" : 2302},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "twoway","flag" : "bridge"},"type" : "LineString","coordinates" : [[544503.41, 3932362.52],[544560.88, 3932448.09],[544503.41, 3932362.52],[544560.88, 3932448.09]]}
+		]
+	}
+}
+]
+}

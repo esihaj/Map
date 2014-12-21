@@ -1,0 +1,45 @@
+{"type": "FeatureCollection",
+"bbox" : [544620.21, 3931531.69, 551238.19, 3935605.16],
+"center" : [547929.20, 3933568.42],
+"features": [
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 187},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544772.06, 3932124.17],[544720.96, 3932207.09],[544703.38, 3932241.56],[544692.00, 3932295.35],[544682.35, 3932493.92],[544677.87, 3932518.40],[544683.38, 3932573.21],[544700.97, 3932626.48],[544734.41, 3932692.32],[544744.17, 3932719.61]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 411},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544597.99, 3932224.05],[544625.01, 3932219.89],[544652.72, 3932211.92],[544705.85, 3932178.26]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1181)","fname" : "","name" : "","id" : 420},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544729.43, 3932697.84],[544679.59, 3932644.06],[544660.98, 3932620.27],[544624.78, 3932593.03],[544604.43, 3932584.76]]}
+		]
+	}
+}
+,
+{
+	"type" : "Feature",
+	"properties" : {"ObjectType" : "unknown(0x1182)","fname" : "","name" : "","id" : 869},
+	"geometry" : {"type" : "GeometryCollection",
+		"geometries" : [
+			{"properties" : {"direction" : "oneway","flag" : "sideway"},"type" : "LineString","coordinates" : [[544604.78, 3932470.65],[544620.99, 3932470.65],[544644.43, 3932461.00],[544651.31, 3932452.03],[544658.22, 3932440.66],[544662.69, 3932414.80],[544658.22, 3932383.08],[544648.91, 3932362.40],[544640.29, 3932355.85],[544628.56, 3932349.99],[544618.92, 3932346.54]]}
+		]
+	}
+}
+]
+}
