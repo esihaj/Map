@@ -1,2 +1,3 @@
 *.pyc
 .spyderworkspace
+.spyderproject
