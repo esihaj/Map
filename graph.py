@@ -24,6 +24,8 @@ class neighbour():
     def __init__(self, index, w):
         self.id = index
         self.weight = w
+def zero(pos):
+    return pos + [0, None, 0]
     
 class Graph():
     size = 0
@@ -45,7 +47,7 @@ class Graph():
                 #line size  = int(line[0])
                 column = []
                 for i in range(int(line[0])):
-                    column.append(neighbour(int(line[1+ i*2]), float(line[1+ i*2+1])))
+                    column.append((int(line[1+ i*2]), float(line[1+ i*2+1])))
                 self.adjacent.append(column)
 
             
