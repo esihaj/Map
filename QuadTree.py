@@ -10,6 +10,7 @@ import sys
 import pygame
 import graph
 import closestpoint
+import pathfinder
 
 LOGLEVEL = 0
 LOG_GENERAL = 1
@@ -368,32 +369,36 @@ class Map:
         
                 
 def main():
-    path = graph.Graph("path/path.data")
+    city_graph = graph.Graph("path/path.data")
     print "done loading graph"
+    pathF = pathfinder.PathPlanner(city_graph)
+    print len(city_graph.vertex)
     pygame.init() 
     m = Map()
     print m.display.width, m.display.height
-    print "bbox ", m.tree.bbox
-    print "view box", m.cam.view_box
     q = False
     m.update()
+    
+    path_point_id = [0,0]
+    path_turn = True
     while not q: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
                 q = True
             if event.type == pygame.MOUSEBUTTONUP:
                 pos =  m.translate_pos_back(event.pos)
-                cl = closestpoint.manhattan(path.vertex,pos)
-                cl_cut10 = closestpoint.manhattan(path.vertex, pos, 10)
-                cl_cut100 = closestpoint.manhattan(path.vertex, pos, 100)
-                cl_cut1000 = closestpoint.manhattan(path.vertex, pos, 1000)
-                cl_cut10000 = closestpoint.manhattan(path.vertex, pos, 10000)                
-                print "cl ", closestpoint.eculid_dist(cl, pos)
-                print "cut10 ", closestpoint.eculid_dist(cl_cut10, pos)
-                print "cut100 ", closestpoint.eculid_dist(cl_cut100, pos)
-                print "cut1000 ", closestpoint.eculid_dist(cl_cut1000, pos)
-                print "cut10000 ", closestpoint.eculid_dist(cl_cut10000, pos)
+                closest_id = closestpoint.manhattan(city_graph.vertex ,pos, 50)
+                print "found closest pair", closest_id
                 
+                if path_turn:
+                    path_point_id[0] = closest_id
+                else : path_point_id[1] = closest_id
+                path_turn = not path_turn
+                
+#                if path_turn:#we have set two points time to begin the fun!
+#                    print "path finder result"
+#                    print pathF.Astar(path_point_id[0], path_point_id[1])
+                    
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     print "BYE!"
