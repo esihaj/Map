@@ -10,7 +10,14 @@ class Graph():
     size = 0
     vertex = []
     adjacent = []
+<<<<<<< HEAD
+    def __init__(self, filename):
+        self.__loadFile(filename)
+        
+    def __loadFile(self, filename):    
+=======
     def loadFile(self, filename):    
+>>>>>>> 755ca173b7825d88d9e2be58ef19539de5fc0408
         with open(filename) as f:
             #size of the graph
             self.size = int(f.readline().split()[0])

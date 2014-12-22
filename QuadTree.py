@@ -8,6 +8,8 @@ import json
 import os
 import sys
 import pygame
+import graph
+import closestpoint
 
 LOGLEVEL = 0
 LOG_GENERAL = 1
@@ -124,6 +126,7 @@ def explore(node, l = 0):
     
     
 class Camera:
+    zoom_step = 0.2
     z_level = 0
     zoom_limit = [0,3]
     view_box = [[0,0], [0,0]]
@@ -192,15 +195,35 @@ class Camera:
         return z
         
     def zoom_in(self):
-        self.zoom(self.__trim_zoom(self.z_level + 0.05))
+        self.zoom(self.__trim_zoom(self.z_level + self.zoom_step))
     def zoom_out(self):
-        self.zoom(self.__trim_zoom(self.z_level - 0.05))
+        self.zoom(self.__trim_zoom(self.z_level - self.zoom_step))
     
-            
-
+    def __adjust_reverse_modulo_effect(self, value, x_y):
+        if value < self.orig_box[0][x_y]:
+            return value + self.orig_size[x_y]
+        elif value > self.orig_box[1][x_y]:
+            return value - self.orig_size[x_y]
+        return value
+        
+    def adjust_reverses(self, point):
+        tmp_x = point[0] + self.view_box[0][0]
+        tmp_y = point[1] + self.view_box[0][1]
+        #the camera can be in the range of [org_pos -orig_size ,orig_end_pos +orig_size] 
+        #thus we need to trim it
+        #cam start:-20 width:50,
+        #orig start:0 end:100,
+        #point to reverse :10 --> should be 90 in the new coordinat system
+        return [self.__adjust_reverse_modulo_effect(tmp_x, 0),self.__adjust_reverse_modulo_effect(tmp_y,1)]
+        
     def __adjust_to_coord_sys(self, point):
         tmp_x = point[0] - self.view_box[0][0]
         tmp_y = point[1] - self.view_box[0][1]
+        #the camera can be in the range of [org_pos -orig_size ,orig_end_pos +orig_size] 
+        #thus we need to trim it
+        #cam start:-20 width:50,
+        #orig start:0 end:100,
+        #point:90 --> should be 10 in the new coordinat system
         return [tmp_x % self.orig_size[0], tmp_y % self.orig_size[1]]
     
     def adjust_to_coord_sys(self, point_list):
@@ -236,6 +259,9 @@ class Display:
         self.width = int(round(max_H * self.screen_area * ratio))
         self.height = int(round(max_H * self.screen_area))
 #        return [int(round(max_H * self.screen_area * ratio)), int(round(max_H * self.screen_area))]
+        
+    def scale_reverse(self, point):
+        return [point[0] *  self.scale[0] /self.width  , point[1] * self.scale[1] /self.height ]
         
     def __scale_cord(self, point):
         return [point[0] * self.width / self.scale[0] , point[1] * self.height / self.scale[1]]
@@ -337,19 +363,37 @@ class Map:
             self.cam.move(1,0)
         elif dir == 'left':
             self.cam.move(-1,0)
+    def translate_pos_back(self, point):
+        return self.cam.adjust_reverses(self.display.scale_reverse(point))
         
                 
-    
 def main():
+    path = graph.Graph("path/path.data")
+    print "done loading graph"
     pygame.init() 
     m = Map()
     print m.display.width, m.display.height
+    print "bbox ", m.tree.bbox
+    print "view box", m.cam.view_box
     q = False
     m.update()
     while not q: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
-                q = True 
+                q = True
+            if event.type == pygame.MOUSEBUTTONUP:
+                pos =  m.translate_pos_back(event.pos)
+                cl = closestpoint.manhattan(path.vertex,pos)
+                cl_cut10 = closestpoint.manhattan(path.vertex, pos, 10)
+                cl_cut100 = closestpoint.manhattan(path.vertex, pos, 100)
+                cl_cut1000 = closestpoint.manhattan(path.vertex, pos, 1000)
+                cl_cut10000 = closestpoint.manhattan(path.vertex, pos, 10000)                
+                print "cl ", closestpoint.eculid_dist(cl, pos)
+                print "cut10 ", closestpoint.eculid_dist(cl_cut10, pos)
+                print "cut100 ", closestpoint.eculid_dist(cl_cut100, pos)
+                print "cut1000 ", closestpoint.eculid_dist(cl_cut1000, pos)
+                print "cut10000 ", closestpoint.eculid_dist(cl_cut10000, pos)
+                
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     print "BYE!"
