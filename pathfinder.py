@@ -28,7 +28,7 @@ class PathPlanner():
 #        return abs(node1[G.POS][0] - self.graph.vertex[self.end][G.POS][0])  + abs(node1[G.POS][1]- self.graph.vertex[self.end][G.POS][1])
     def heuristic(self, node):
 ##        return closestpoint.euclid_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
-        return abs(node[G.POS][0] - self.graph.vertex[self.end][G.POS][0])  + abs(node[G.POS][1]- self.graph.vertex[self.end][G.POS][1])
+        return 100*(abs(node[G.POS][0] - self.graph.vertex[self.end][G.POS][0])  + abs(node[G.POS][1]- self.graph.vertex[self.end][G.POS][1]))
 
 #    def __g_cost(self, child, parent, edge_weight):
 #        return edge_weight + self.graph.vertex[parent][G.G_COST]

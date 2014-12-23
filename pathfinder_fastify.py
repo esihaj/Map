@@ -30,7 +30,7 @@ class PathPlanner():
     def heuristic(self, node):
 #        return sqrt((node[0][0] - self.graph.vertex[self.end][0][0]) ** 2 + (node[0][1]- self.graph.vertex[self.end][0][1]) ** 2)
 #        return 0
-        return abs(node[0][0] - self.graph.vertex[self.end][0][0])  + abs(node[0][1]- self.graph.vertex[self.end][0][1])
+        return 100 * (abs(node[0][0] - self.graph.vertex[self.end][0][0])  + abs(node[0][1]- self.graph.vertex[self.end][0][1]))
 
 #    def __g_cost(self, child, parent, edge_weight):
 #        return edge_weight + self.graph.vertex[parent][3]
