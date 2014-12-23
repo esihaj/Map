@@ -109,20 +109,7 @@ class PathPlanner():
                 elif self.graph.vertex[nb[G.NB_ID]][G.STATUS] == G.ST_PENDING:  
                     self.__relax_child(self.search_list.index( [self.graph.vertex[nb[G.NB_ID]][G.F_COST],nb[G.NB_ID]] ),
                                        nb[G.NB_ID], curr[1], nb[G.NB_W])
-                      
-#                    for p in xrange(len(self.search_list)):#find nb in the search list
-#                        #and check if the new way is shorter
-#                        if self.search_list[p][1] == nb[G.NB_ID]:
-#                           if  self.__relax_child(p,nb[G.NB_ID],curr[1],nb[G.NB_W]):
-#                               need_to_heapify = True
-#                           break
-###                            print "relaxing", p.id
-##                            if self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W]) <self.search_list[p][0]:
-###                                print "relaxed"
-##                                self.__relax_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
-##                                self.search_list[p][0] = self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W])
-##                                need_to_heapify = True
-##                            break
+
             if time.time() - t2 > 0.0011:
                 print "inner loop",time.time() - t2
             if need_to_heapify:
@@ -140,7 +127,7 @@ p = PathPlanner(city_graph)
 print "done"
 print "*"*10
 print "Astar"
-p.Atime(0,100)
+#p.Atime(0,100)
 
 #print p.Astar(0,2)
 #print "*"*10
