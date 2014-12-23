@@ -309,7 +309,7 @@ class Map:
         self.tree = QTree(0, get_path(0,0,0))
         generate_Tree(0,0,0,self.tree)
         #explore(root)
-        #print root.bbox
+        print self.tree.bbox
         #explore(root)
         #print QTree.count
         self.cam = Camera(self.tree)
@@ -472,13 +472,15 @@ def main():
             if event.type == pygame.MOUSEBUTTONUP:
                 if event.button == 1:#left click
                     pos =  m.translate_pos_back(event.pos)
-                    selected_ids[0] = closestpoint.manhattan(vertex ,pos, 10)
-                    print "closest id", selected_ids[0]
+#                    selected_ids[0] = closestpoint.manhattan(vertex ,pos, 10)
+                    (close_dist,selected_ids[0]) = path_finder.graph.qtree.find_closest(pos)
+                    print "closest id", selected_ids[0], "dist", close_dist
                     marker_src = vertex[selected_ids[0]][0]
                 elif event.button == 3:
                     pos =  m.translate_pos_back(event.pos)
-                    selected_ids[1] = closestpoint.manhattan(vertex ,pos, 10)
-                    print "closest id", selected_ids[1]                    
+#                    selected_ids[1] = closestpoint.manhattan(vertex ,pos, 10)
+                    (close_dist,selected_ids[1]) = path_finder.graph.qtree.find_closest(pos)
+                    print "closest id", selected_ids[1], "dist", close_dist                    
                     marker_dst = vertex[selected_ids[1]][0]
                     should_draw = True
                 elif event.button == 2:

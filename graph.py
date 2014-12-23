@@ -5,6 +5,7 @@ Created on Mon Dec 22 2:05:28 2014
 
 @author: Ehsan
 """
+import QuadBucket
 #node fields
 POS     = 0
 STATUS  = 1
@@ -27,8 +28,10 @@ class Graph():
     size = 0
     vertex = []
     adjacent = []
+    qtree = QuadBucket.QBucket()
 #    idx = 0
     def __init__(self, filename):
+        self.qtree = QuadBucket.QBucket([[490000, 3400000], [580000, 4200000]])
         self.__loadFile(filename)
            
 #    def __parse_adj(self,line):
@@ -61,7 +64,12 @@ class Graph():
 #                appendV(node(map(int,map(float, split(read())))))
             #complex but faster statement
             self.vertex = [[map(int,map(float, split(read()))), 0, None, 0, 0]
-                            for i in xrange(SIZE)]    
+                            for i in xrange(SIZE)]
+            v = self.vertex
+            add_node = self.qtree.add_node
+            for i in xrange(len(v)):
+                add_node(i, v[i][0])
+            print self.qtree.size
             #adjacency list
 #            map(self.__parse_adj, f.readlines(self.size))
                                
