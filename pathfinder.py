@@ -8,19 +8,6 @@ import closestpoint
 import graph as G
 import heapq #probably should implement my own
 from timeit import time
-
-class heapObj():
-    id = 0
-    val = 0
-    
-    def __init__(self, id, val):
-        self.id = id
-        self.val = val
-        
-    def __cmp__(self, other):
-        return cmp(self.val, other.val)
-    def __str__(self):
-        return str(self.id)
         
 class PathPlanner():
     graph = None
@@ -34,8 +21,8 @@ class PathPlanner():
     #TODO 
     #add other heuristic methods
     def heuristic(self, node):
-        return closestpoint.euclid_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
-#        return closestpoint.manhattan_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
+#        return closestpoint.euclid_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
+        return closestpoint.manhattan_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
 
     def __g_cost(self, child, parent, edge_weight):
         return edge_weight + self.graph.vertex[parent][G.COST]
@@ -56,7 +43,7 @@ class PathPlanner():
         self.graph.vertex[child][G.STATUS] = G.ST_PENDING
         self.graph.vertex[child][G.PARENT] = parent
         self.graph.vertex[child][G.COST] = self.__g_cost(child,parent,edge_weight)
-        heapq.heappush(self.search_list, heapObj(child, self.__f_cost(child,parent,edge_weight)))
+        heapq.heappush(self.search_list, [self.__f_cost(child,parent,edge_weight), child]);
     def __relax_child(self, child, parent, edge_weight):
         self.graph.vertex[child][G.PARENT] = parent
         self.graph.vertex[child][G.COST] = self.__g_cost(child,parent,edge_weight)
@@ -85,7 +72,7 @@ class PathPlanner():
         self.start = start_node
         self.end = end_node        
         self.search_list = []
-        heapq.heappush(self.search_list, heapObj(start_node, 0))
+        heapq.heappush(self.search_list, [0,start_node])
         
         self.__init_start()
         print "init done", self.T()
@@ -98,27 +85,27 @@ class PathPlanner():
 #            print "]"
             self.step += 1            
             curr = heapq.heappop(self.search_list)
-            self.graph.vertex[curr.id][G.STATUS] = G.ST_CHECKED
+            self.graph.vertex[curr[1]][G.STATUS] = G.ST_CHECKED
             
-            if curr.id == self.end:#found the shortest path! :D
+            if curr[1] == self.end:#found the shortest path! :D
 #                print "bingo!" 
                 return self.backtrace()
                 
             need_to_heapify = False
             t2 = time.time()
-            for nb in self.graph.adjacent[curr.id]:
+            for nb in self.graph.adjacent[curr[1]]:
                 if self.graph.vertex[nb[G.NB_ID]][G.STATUS] == G.ST_UNCHECKED:
-                    self.__add_child(nb[G.NB_ID], curr.id, nb[G.NB_W])
+                    self.__add_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
                     
                 elif self.graph.vertex[nb[G.NB_ID]][G.STATUS] == G.ST_PENDING:
                     for p in xrange(len(self.search_list)):#find nb in the search list
                         #and check if the new way is shorter
-                        if self.search_list[p].id == nb[G.NB_ID]:
+                        if self.search_list[p][1] == nb[G.NB_ID]:
 #                            print "relaxing", p.id
-                            if self.__f_cost(nb[G.NB_ID], curr.id, nb[G.NB_W]) <self.search_list[p].val:
+                            if self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W]) <self.search_list[p][0]:
 #                                print "relaxed"
-                                self.__relax_child(nb[G.NB_ID], curr.id, nb[G.NB_W])
-                                self.search_list[p].val = self.__f_cost(nb[G.NB_ID], curr.id, nb[G.NB_W])
+                                self.__relax_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
+                                self.search_list[p][0] = self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W])
                                 need_to_heapify = True
                             break
             if time.time() - t2 > 0.0011:
