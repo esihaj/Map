@@ -6,7 +6,7 @@ Created on Mon Dec 22 4:54:34 2014
 """
 #import closestpoint
 import heapq #probably should implement my own
-import graph as G
+from math import sqrt
 
     
 class PathPlanner():
@@ -15,6 +15,7 @@ class PathPlanner():
     end   = None
     search_list = []    
     def __init__(self, filename):  
+        import graph as G
         self.graph = G.Graph(filename)
         print len(self.graph.vertex)
         
@@ -25,13 +26,14 @@ class PathPlanner():
 #    def manhattan_dist(p1, p2):
 #        return abs(p1[0] - p2[0])  + abs(p1[1]- p2[1])
 #    def m_dist(self, node1):
-#        return abs(node1[G.POS][0] - self.graph.vertex[self.end][G.POS][0])  + abs(node1[G.POS][1]- self.graph.vertex[self.end][G.POS][1])
+#        return abs(node1[0][0] - self.graph.vertex[self.end][0][0])  + abs(node1[0][1]- self.graph.vertex[self.end][0][1])
     def heuristic(self, node):
-##        return closestpoint.euclid_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
-        return abs(node[G.POS][0] - self.graph.vertex[self.end][G.POS][0])  + abs(node[G.POS][1]- self.graph.vertex[self.end][G.POS][1])
+#        return sqrt((node[0][0] - self.graph.vertex[self.end][0][0]) ** 2 + (node[0][1]- self.graph.vertex[self.end][0][1]) ** 2)
+#        return 0
+        return abs(node[0][0] - self.graph.vertex[self.end][0][0])  + abs(node[0][1]- self.graph.vertex[self.end][0][1])
 
 #    def __g_cost(self, child, parent, edge_weight):
-#        return edge_weight + self.graph.vertex[parent][G.G_COST]
+#        return edge_weight + self.graph.vertex[parent][3]
 #
 #    def __f_cost(self, child, parent, edge_weight):
 #        return self.__g_cost(child,parent,edge_weight) +  self.heuristic(self.graph.vertex[child])
@@ -39,24 +41,24 @@ class PathPlanner():
 
     def __init_start(self):
         v = self.graph.vertex[self.start]
-        v[G.G_COST] = 0
-        v[G.F_COST] = self.heuristic(v)#?
-        v[G.PARENT] = None
+        v[3] = 0
+        v[4] = self.heuristic(v)#?
+        v[2] = None
         heapq.heappush(self.search_list, [self.heuristic(v),self.start])
 
 #    def __add_child(self, child, parent, edge_weight):
 ##        print "adding %d -> %d (%d)" % (parent, child, edge_weight)
-#        self.graph.vertex[child][G.STATUS] = G.ST_PENDING
-#        self.graph.vertex[child][G.PARENT] = parent
-#        self.graph.vertex[child][G.G_COST] = self.__g_cost(child,parent,edge_weight)
-#        self.graph.vertex[child][G.F_COST] = self.__f_cost(child,parent,edge_weight)
+#        self.graph.vertex[child][1] = 1
+#        self.graph.vertex[child][2] = parent
+#        self.graph.vertex[child][3] = self.__g_cost(child,parent,edge_weight)
+#        self.graph.vertex[child][4] = self.__f_cost(child,parent,edge_weight)
 #        heapq.heappush(self.search_list, [self.__f_cost(child,parent,edge_weight), child]);
 #    
 #    def __relax_child(self, search_id, child, parent, edge_weight):
 #        if self.__f_cost(child, parent, edge_weight) < self.search_list[search_id][0]:        
-#            self.graph.vertex[child][G.PARENT] = parent
-#            self.graph.vertex[child][G.G_COST] = self.__g_cost(child,parent,edge_weight)
-#            self.graph.vertex[child][G.F_COST] = self.search_list[search_id][0] = self.__f_cost(child,parent,edge_weight)
+#            self.graph.vertex[child][2] = parent
+#            self.graph.vertex[child][3] = self.__g_cost(child,parent,edge_weight)
+#            self.graph.vertex[child][4] = self.search_list[search_id][0] = self.__f_cost(child,parent,edge_weight)
 #            return True
 #        return False
         
@@ -67,8 +69,8 @@ class PathPlanner():
         curr = self.end
 #        print "cur, ", curr
         path = [curr]
-        while self.graph.vertex[curr][G.PARENT] != None:
-            curr = self.graph.vertex[curr][G.PARENT]
+        while self.graph.vertex[curr][2] != None:
+            curr = self.graph.vertex[curr][2]
             path.append(curr)
         return self.__reverse(path) 
 
@@ -84,37 +86,37 @@ class PathPlanner():
 
         while heap:
             curr = heapq.heappop(heap)
-            state[curr[1]] = G.ST_CHECKED
+            state[curr[1]] = 2
             
             if curr[1] == end_node:#found the shortest path! :D
                 return self.backtrace()
                 
             need_to_heapify = False
             for nb in adjc[curr[1]]:
-                if state[nb[G.NB_ID]] == G.ST_UNCHECKED:#add it as a child
-#                    self.__add_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
-                    child = v[nb[G.NB_ID]]
-                    state[nb[G.NB_ID]] = G.ST_PENDING
-                    child[G.PARENT] = curr[1]
-                    child[G.G_COST] = nb[G.NB_W] + v[curr[1]][G.G_COST]# G = edge weight + G(parent)
-                    child[G.F_COST] = child[G.G_COST] + H(child) # F = G + H 
-                    heapq.heappush(heap, [child[G.F_COST], nb[G.NB_ID]]);
+                if state[nb[0]] == 0:#add it as a child
+#                    self.__add_child(nb[0], curr[1], nb[1])
+                    child = v[nb[0]]
+                    state[nb[0]] = 1
+                    child[2] = curr[1]
+                    child[3] = nb[1] + v[curr[1]][3]# G = edge weight + G(parent)
+                    child[4] = child[3] + H(child) # F = G + H 
+                    heapq.heappush(heap, [child[4], nb[0]]);
                     
-                elif state[nb[G.NB_ID]] == G.ST_PENDING:  #Try to relax it
-#                    self.__relax_child(self.search_list.index( [v[nb[G.NB_ID]][G.F_COST],nb[G.NB_ID]] ),
-#                                       nb[G.NB_ID], curr[1], nb[G.NB_W])
-                    child = v[nb[G.NB_ID]]                    
-                    search_id = heap.index( [child[G.F_COST],nb[G.NB_ID]] )
+                elif state[nb[0]] == 1:  #Try to relax it
+#                    self.__relax_child(self.search_list.index( [v[nb[0]][4],nb[0]] ),
+#                                       nb[0], curr[1], nb[1])
+                    child = v[nb[0]]                    
+                    search_id = heap.index( [child[4],nb[0]] )
                     
                     #new Costs
-                    new_g_cost = nb[G.NB_W] + v[curr[1]][G.G_COST]# G = edge weight + G(parent)                    
+                    new_g_cost = nb[1] + v[curr[1]][3]# G = edge weight + G(parent)                    
                     new_f_cost = new_g_cost + H(child) # F = G + H 
                     
                     #if better ...
                     if new_f_cost < heap[search_id][0]:#relax it   
-                        child[G.PARENT] = curr[1]
-                        child[G.G_COST] = new_g_cost
-                        child[G.F_COST] = heap[search_id][0] = new_f_cost
+                        child[2] = curr[1]
+                        child[3] = new_g_cost
+                        child[4] = heap[search_id][0] = new_f_cost
                         need_to_heapify = True
                     
 
