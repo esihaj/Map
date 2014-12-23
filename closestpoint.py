@@ -19,7 +19,7 @@ def manhattan_dist(p1, p2):
 def manhattan(point_list, start, cutoff = None):
     min_dist = 10**7
     index = None
-    for i in range(len(point_list)):
+    for i in xrange(len(point_list)):
         if manhattan_dist(point_list[i].pos, start) < min_dist : 
             index = i
             min_dist = manhattan_dist(point_list[i].pos, start)
@@ -30,7 +30,7 @@ def manhattan(point_list, start, cutoff = None):
 def euclidean(point_list, start, cutoff = None):
     min_dist = 10**13
     index = None
-    for i in range(len(point_list)):
+    for i in xrange(len(point_list)):
        if euclid_dist2(point_list[i].pos,start) < min_dist :
             index = i
             min_dist = euclid_dist2(point_list[i].pos,start)

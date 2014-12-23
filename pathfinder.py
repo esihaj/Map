@@ -17,6 +17,8 @@ class PathPlanner():
     def __init__(self, graph):
         self.graph = graph
         print len(self.graph.vertex)
+    def v(self, idx):
+        return self.graph.vertex[idx]
         
     #TODO 
     #add other heuristic methods
@@ -25,7 +27,7 @@ class PathPlanner():
         return closestpoint.manhattan_dist(node[G.POS], self.graph.vertex[self.end][G.POS])
 
     def __g_cost(self, child, parent, edge_weight):
-        return edge_weight + self.graph.vertex[parent][G.COST]
+        return edge_weight + self.graph.vertex[parent][G.G_COST]
 
     def __f_cost(self, child, parent, edge_weight):
         return self.__g_cost(child,parent,edge_weight) +  self.heuristic(self.graph.vertex[child])
@@ -33,8 +35,10 @@ class PathPlanner():
 
     def __init_start(self):
         self.graph.vertex[self.start][G.STATUS] = G.ST_PENDING
-        self.graph.vertex[self.start][G.COST] = 0
+        self.graph.vertex[self.start][G.G_COST] = 0
+        self.graph.vertex[self.start][G.F_COST] = self.heuristic(self.graph.vertex[self.start])#?
         self.graph.vertex[self.start][G.PARENT] = None
+        heapq.heappush(self.search_list, [self.heuristic(self.graph.vertex[self.start]),self.start])
         for v in xrange(len(self.graph.vertex)):
             self.graph.vertex[v][G.STATUS] = G.ST_UNCHECKED
 
@@ -42,11 +46,17 @@ class PathPlanner():
 #        print "adding %d -> %d (%d)" % (parent, child, edge_weight)
         self.graph.vertex[child][G.STATUS] = G.ST_PENDING
         self.graph.vertex[child][G.PARENT] = parent
-        self.graph.vertex[child][G.COST] = self.__g_cost(child,parent,edge_weight)
+        self.graph.vertex[child][G.G_COST] = self.__g_cost(child,parent,edge_weight)
+        self.graph.vertex[child][G.F_COST] = self.__f_cost(child,parent,edge_weight)
         heapq.heappush(self.search_list, [self.__f_cost(child,parent,edge_weight), child]);
-    def __relax_child(self, child, parent, edge_weight):
-        self.graph.vertex[child][G.PARENT] = parent
-        self.graph.vertex[child][G.COST] = self.__g_cost(child,parent,edge_weight)
+    
+    def __relax_child(self, search_id, child, parent, edge_weight):
+        if self.__f_cost(child, parent, edge_weight) < self.search_list[search_id][0]:        
+            self.graph.vertex[child][G.PARENT] = parent
+            self.graph.vertex[child][G.G_COST] = self.__g_cost(child,parent,edge_weight)
+            self.graph.vertex[child][G.F_COST] = self.search_list[search_id][0] = self.__f_cost(child,parent,edge_weight)
+            return True
+        return False
         
     def __reverse(self,list):
         return list[::-1]
@@ -71,10 +81,9 @@ class PathPlanner():
     def Astar(self, start_node, end_node):
         self.start = start_node
         self.end = end_node        
-        self.search_list = []
-        heapq.heappush(self.search_list, [0,start_node])
-        
+        self.search_list = []        
         self.__init_start()
+
         print "init done", self.T()
         self.step = 0
         while self.search_list:
@@ -97,17 +106,23 @@ class PathPlanner():
                 if self.graph.vertex[nb[G.NB_ID]][G.STATUS] == G.ST_UNCHECKED:
                     self.__add_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
                     
-                elif self.graph.vertex[nb[G.NB_ID]][G.STATUS] == G.ST_PENDING:
-                    for p in xrange(len(self.search_list)):#find nb in the search list
-                        #and check if the new way is shorter
-                        if self.search_list[p][1] == nb[G.NB_ID]:
-#                            print "relaxing", p.id
-                            if self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W]) <self.search_list[p][0]:
-#                                print "relaxed"
-                                self.__relax_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
-                                self.search_list[p][0] = self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W])
-                                need_to_heapify = True
-                            break
+                elif self.graph.vertex[nb[G.NB_ID]][G.STATUS] == G.ST_PENDING:  
+                    self.__relax_child(self.search_list.index( [self.graph.vertex[nb[G.NB_ID]][G.F_COST],nb[G.NB_ID]] ),
+                                       nb[G.NB_ID], curr[1], nb[G.NB_W])
+                      
+#                    for p in xrange(len(self.search_list)):#find nb in the search list
+#                        #and check if the new way is shorter
+#                        if self.search_list[p][1] == nb[G.NB_ID]:
+#                           if  self.__relax_child(p,nb[G.NB_ID],curr[1],nb[G.NB_W]):
+#                               need_to_heapify = True
+#                           break
+###                            print "relaxing", p.id
+##                            if self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W]) <self.search_list[p][0]:
+###                                print "relaxed"
+##                                self.__relax_child(nb[G.NB_ID], curr[1], nb[G.NB_W])
+##                                self.search_list[p][0] = self.__f_cost(nb[G.NB_ID], curr[1], nb[G.NB_W])
+##                                need_to_heapify = True
+##                            break
             if time.time() - t2 > 0.0011:
                 print "inner loop",time.time() - t2
             if need_to_heapify:
@@ -126,6 +141,7 @@ print "done"
 print "*"*10
 print "Astar"
 p.Atime(0,100)
+
 #print p.Astar(0,2)
 #print "*"*10
 #print p.Astar(1,2)
