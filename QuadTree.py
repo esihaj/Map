@@ -269,8 +269,8 @@ class Display:
     def scale_cord(self, point_list):
         return map(self.__scale_cord, point_list)
         
-    def draw_lines(self, point_list):
-        pygame.draw.lines(self.window, self.line_color, False, point_list, self.line_size)
+    def draw_lines(self, point_list, color=None):
+        pygame.draw.lines(self.window, color if color else self.line_color, False, point_list, self.line_size)
     def draw_points(self, point_list):
         for p in point_list:
            pygame.draw.rect(self.window, self.point_color, pygame.Rect(p[0], p[1] ,2,2)) 
@@ -294,7 +294,22 @@ class Map:
         #print QTree.count
         self.cam = Camera(self.tree)
         self.display = Display(self.tree)
-        
+    def draw_route(self, point_list, color):
+        point_list = self.cam.adjust_to_coord_sys(point_list)
+        point_list = self.display.scale_cord(point_list)
+        corrupted = False
+        last = point_list[0]
+        for i in point_list:
+            if abs(i[0] -last[0]) > self.display.width -200:
+                corrupted = True
+                break
+            if abs(i[1] - last[1] ) > self.display.height - 200:
+                corrupted = True
+                break
+            last = i
+        if not corrupted:
+           self.display.draw_lines(point_list, color)
+            
     def draw(self, geo_data):
         for feature in geo_data['features']:
             if feature['geometry']['type'] == "GeometryCollection":
@@ -338,7 +353,7 @@ class Map:
         elif type(item) == str:
             self.draw_file(item)
             
-    def update(self):
+    def update(self, r):
         print "update Called zoom ", self.cam.z_level
         self.display.clear_screen()
         #update display scale to match the current zoom level
@@ -348,7 +363,7 @@ class Map:
 #        print "f list \n", file_list
 #        print "view ", self.cam.view_box
         self.explore_list(file_list)
-            
+        self.draw_route(r, (0,230,0))
         self.display.flip_screen()
         
     def zoom_in(self):
@@ -373,12 +388,16 @@ def main():
     print "done loading graph"
     pathF = pathfinder.PathPlanner(city_graph)
     print len(city_graph.vertex)
+    route_id = pathF.Astar(0,100)
+    route = []    
+    for i in route_id:
+        route.append(city_graph.vertex[i][graph.POS])
+    print len(route)
     pygame.init() 
     m = Map()
     print m.display.width, m.display.height
     q = False
-    m.update()
-    
+    m.update(route)
     path_point_id = [0,0]
     path_turn = True
     while not q: 
@@ -415,7 +434,7 @@ def main():
                     m.move_to('right')
                 elif event.key == pygame.K_LEFT:
                     m.move_to('left') 
-                m.update()
+                m.update(route)
 
     pygame.quit()
     
