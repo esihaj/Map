@@ -6,11 +6,11 @@ Created on Tue Dec 02 23:17:43 2014
 """
 import json
 import os
-import sys
+#import sys
 import pygame
-import graph
 import closestpoint
 import pathfinder
+import copy
 
 LOGLEVEL = 0
 LOG_GENERAL = 1
@@ -135,7 +135,7 @@ class Camera:
     orig_box = [[0,0], [0,0]]
     move_step = 10.0 # how much we should move in proportion to view_box's size (currently 1/10 th)
     def __init__(self, tree):
-        self.view_box = tree.bbox
+        self.view_box = copy.deepcopy(tree.bbox)
         self.orig_box = tree.bbox
         self.orig_size = [tree.bbox[1][0] - tree.bbox[0][0], tree.bbox[1][1] - tree.bbox[0][1]]
         self.z_level = 0
@@ -248,7 +248,7 @@ class Display:
               
     def __init__(self, tree):
         self.screen_area = 3/4.0
-        bbox = tree.bbox
+        bbox = copy.deepcopy(tree.bbox)
         
         d_info = pygame.display.Info()
         if d_info.current_h != -1:
@@ -392,6 +392,10 @@ class Map:
         self.display.scale = self.cam.size()
         
         file_list = self.tree.find_area(self.cam.z_level, self.cam.view_box)
+#        print "*"*50
+#        print self.cam.view_box
+#        print "tree", self.tree.bbox
+#        print file_list
 #        print "f list \n", file_list
 #        print "view ", self.cam.view_box
         self.explore_list(file_list)
@@ -438,6 +442,9 @@ def main():
     vertex = path_finder.graph.vertex
     pygame.init() 
     m = Map()
+#    print m.tree.bbox
+#    explore(m.tree)
+#    return 0
     print m.display.width, m.display.height
     q = False
     route = []
@@ -489,21 +496,7 @@ def main():
                         print "len(path)", len(route)
                     print "path length", route_len
                 m.update(route, marker_src, marker_dst)
-                    
-                    
-#                pos =  m.translate_pos_back(event.pos)
-#                closest_id = closestpoint.manhattan(city_graph.vertex ,pos, 50)
-#                print "found closest pair", closest_id
-#                
-#                if path_turn:
-#                    path_point_id[0] = closest_id
-#                else : path_point_id[1] = closest_id
-#                path_turn = not path_turn
-                
-#                if path_turn:#we have set two points time to begin the fun!
-#                    print "path finder result"
-#                    print pathF.Astar(path_point_id[0], path_point_id[1])
-                    
+                             
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     print "BYE!"
