@@ -64,13 +64,20 @@ class PathPlanner():
         return list[::-1]
         
     def backtrace(self):
+        path_len = 0
+        v= self.graph.vertex
+        a = self.graph.adjacent
         curr = self.end
 #        print "cur, ", curr
         path = [curr]
         while self.graph.vertex[curr][G.PARENT] != None:
-            curr = self.graph.vertex[curr][G.PARENT]
+            curr = v[curr][G.PARENT]
+            for nb in a[curr]:
+                if nb[G.NB_ID] == path[-1]:
+                    path_len += nb[G.NB_W]
+                    break
             path.append(curr)
-        return self.__reverse(path) 
+        return (path_len, self.__reverse(path))
 
     def Astar(self, start_node, end_node):
         self.start = start_node
@@ -121,7 +128,7 @@ class PathPlanner():
             if need_to_heapify:
                 heapq.heapify(heap)
         
-        return None #couldn't find any path 
+        return (-1,None) #couldn't find any path 
 
 #t0 = time.time()
 p = PathPlanner("path/path.data")

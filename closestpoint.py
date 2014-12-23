@@ -20,9 +20,9 @@ def manhattan(point_list, start, cutoff = None):
     min_dist = 10**7
     index = None
     for i in xrange(len(point_list)):
-        if manhattan_dist(point_list[i].pos, start) < min_dist : 
+        if manhattan_dist(point_list[i][0], start) < min_dist : 
             index = i
-            min_dist = manhattan_dist(point_list[i].pos, start)
+            min_dist = manhattan_dist(point_list[i][0], start)
             if cutoff:
                 if min_dist < cutoff: break
     return index
@@ -31,9 +31,9 @@ def euclidean(point_list, start, cutoff = None):
     min_dist = 10**13
     index = None
     for i in xrange(len(point_list)):
-       if euclid_dist2(point_list[i].pos,start) < min_dist :
+       if euclid_dist2(point_list[i][0],start) < min_dist :
             index = i
-            min_dist = euclid_dist2(point_list[i].pos,start)
+            min_dist = euclid_dist2(point_list[i][0],start)
             if cutoff:
                 if min_dist < cutoff: break
     return index

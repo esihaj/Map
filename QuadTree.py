@@ -243,7 +243,9 @@ class Display:
     point_color = (255,255,0)
     line_color = (128,0,128)
     line_size  = 3
-
+    #src, dst markers
+    markers = {}
+              
     def __init__(self, tree):
         self.screen_area = 3/4.0
         bbox = tree.bbox
@@ -255,6 +257,19 @@ class Display:
         
         self.window =  pygame.display.set_mode((self.width, self.height))
         self.clear_screen()
+
+        tmp_marker = pygame.image.load("res/green_marker.png")
+        rect = tmp_marker.get_rect()
+        self.markers["green"] = pygame.transform.scale(tmp_marker, (rect.width/10, rect.height/10))
+        
+        tmp_marker = pygame.image.load("res/red_marker.png")
+        rect = tmp_marker.get_rect()
+        self.markers["red"] = pygame.transform.scale(tmp_marker, (rect.width/10, rect.height/10))
+        
+        tmp_marker = pygame.image.load("res/blue_marker.png")
+        rect = tmp_marker.get_rect()
+        self.markers["blue"] = pygame.transform.scale(tmp_marker, (rect.width/10, rect.height/10))
+        
         
     def set_optimum_res(self, ratio, max_H):
         self.width = int(round(max_H * self.screen_area * ratio))
@@ -280,6 +295,11 @@ class Display:
     def flip_screen(self):
        #draw it to the screen
        pygame.display.flip() 
+    def show_marker(self, location, which):
+        if location and which in ["blue", "green", "red"]:
+            rect = self.markers[which].get_rect()
+            rect.midbottom = location            
+            self.window.blit(self.markers[which], rect)
              
 class Map:
     display = None    
@@ -294,48 +314,60 @@ class Map:
         #print QTree.count
         self.cam = Camera(self.tree)
         self.display = Display(self.tree)
-    def draw_route(self, point_list, color):
+    def draw_route(self, point_list, color =None):
         point_list = self.cam.adjust_to_coord_sys(point_list)
         point_list = self.display.scale_cord(point_list)
-        corrupted = False
-        last = point_list[0]
-        for i in point_list:
-            if abs(i[0] -last[0]) > self.display.width -200:
-                corrupted = True
-                break
-            if abs(i[1] - last[1] ) > self.display.height - 200:
-                corrupted = True
-                break
-            last = i
-        if not corrupted:
-           self.display.draw_lines(point_list, color)
+        in_view = [p for p in point_list if (0<=p[0]<=self.display.width and 0<=p[1]<=self.display.height)] #only those in screen                
+        list_of_lists = []        
+        last_index = 0
+        for i in xrange(1,len(in_view)):
+            if (abs(in_view[i][0] -in_view[i-1][0]) > self.display.width -200) or (abs(in_view[i][1] - in_view[i-1][1] ) > self.display.height - 200):
+                    list_of_lists.append(in_view[last_index:i])
+                    last_index = i
+        if not list_of_lists:
+            list_of_lists.append(in_view)
+#        corrupted = False
+#        last = point_list[0]
+#        for i in point_list:
+#            if abs(i[0] -last[0]) > self.display.width -200:
+#                corrupted = True
+#                break
+#            if abs(i[1] - last[1] ) > self.display.height - 200:
+#                corrupted = True
+#                break
+#            last = i
+#        if not corrupted:
+        for l in list_of_lists:
+            if len(l) > 1:
+                self.display.draw_lines(l, color)
             
     def draw(self, geo_data):
         for feature in geo_data['features']:
             if feature['geometry']['type'] == "GeometryCollection":
                 for LineString in feature['geometry']['geometries']:
                     point_list = LineString['coordinates']
-#                    print "Coordinates : \n", point_list
-                    #shift the coordinate system
-                    point_list = self.cam.adjust_to_coord_sys(point_list)
-#                    print "adjust : \n", point_list
-                    #scale the point list
-                    point_list = self.display.scale_cord(point_list)
-#                    print "scale : \n", point_list
-                    corrupted = False
-                    last = point_list[0]
-                    for i in point_list:
-                        if abs(i[0] -last[0]) > self.display.width -200:
-                            corrupted = True
-                            break
-                        if abs(i[1] - last[1] ) > self.display.height - 200:
-                            corrupted = True
-                            break
-                        last = i
-#                        sys.stdout.write(str(int(i[1])) + ", ")
-#                    print ""
-                    if not corrupted:
-                        self.display.draw_lines(point_list)
+                    self.draw_route(point_list)
+##                    print "Coordinates : \n", point_list
+#                    #shift the coordinate system
+#                    point_list = self.cam.adjust_to_coord_sys(point_list)
+##                    print "adjust : \n", point_list
+#                    #scale the point list
+#                    point_list = self.display.scale_cord(point_list)
+##                    print "scale : \n", point_list
+#                    corrupted = False
+#                    last = point_list[0]
+#                    for i in point_list:
+#                        if abs(i[0] -last[0]) > self.display.width -200:
+#                            corrupted = True
+#                            break
+#                        if abs(i[1] - last[1] ) > self.display.height - 200:
+#                            corrupted = True
+#                            break
+#                        last = i
+##                        sys.stdout.write(str(int(i[1])) + ", ")
+##                    print ""
+#                    if not corrupted:
+#                        self.display.draw_lines(point_list)
             elif feature['geometry']['type'] == "MultiPoint":
                 point_list = feature['geometry']['coordinates']
                 point_list = self.cam.adjust_to_coord_sys(point_list)
@@ -353,7 +385,7 @@ class Map:
         elif type(item) == str:
             self.draw_file(item)
             
-    def update(self, r):
+    def update(self, r, start_marker, end_marker):
         print "update Called zoom ", self.cam.z_level
         self.display.clear_screen()
         #update display scale to match the current zoom level
@@ -363,7 +395,13 @@ class Map:
 #        print "f list \n", file_list
 #        print "view ", self.cam.view_box
         self.explore_list(file_list)
-        self.draw_route(r, (0,230,0))
+        if r:        
+            self.draw_route(r, (0,230,0))
+        
+        if start_marker : 
+            self.display.show_marker(self.convert_to_cord(start_marker), "blue")
+        if end_marker:
+            self.display.show_marker(self.convert_to_cord(end_marker), "red")
         self.display.flip_screen()
         
     def zoom_in(self):
@@ -382,37 +420,85 @@ class Map:
     def translate_pos_back(self, point):
         return self.cam.adjust_reverses(self.display.scale_reverse(point))
         
+    def convert_to_cord(self, point):
+        return self.display.scale_cord(self.cam.adjust_to_coord_sys([point]))[0]
+        
                 
 def main():
-    city_graph = graph.Graph("path/path.data")
-    print "done loading graph"
-    pathF = pathfinder.PathPlanner(city_graph)
-    print len(city_graph.vertex)
-    route_id = pathF.Astar(0,100)
-    route = []    
-    for i in route_id:
-        route.append(city_graph.vertex[i][graph.POS])
-    print len(route)
+#    city_graph = graph.Graph("path/path.data")
+#    print "done loading graph"
+#    pathF = pathfinder.PathPlanner(city_graph)
+#    print len(city_graph.vertex)
+#    route_id = pathF.Astar(0,100)
+#    route = []    
+#    for i in route_id:
+#        route.append(city_graph.vertex[i][graph.POS])
+#    print len(route)
+    path_finder = pathfinder.PathPlanner("path/path.data")
+    vertex = path_finder.graph.vertex
     pygame.init() 
     m = Map()
     print m.display.width, m.display.height
     q = False
-    m.update(route)
-    path_point_id = [0,0]
-    path_turn = True
+    route = []
+    
+
+    selected_ids = [0, 100]
+    should_draw = False
+    marker_src = None
+    marker_dst = None
+    route_len = 0
+#    (route_len, route_id) = path_finder.Astar(selected_ids[0], selected_ids[1])
+#    route = []
+#    if route_id:
+#        for i in route_id:
+#            route.append(vertex[i][0])                      
+#        print "len(path)", len(route)
+#    print "path length", route_len
+                    
+    m.update(route, marker_src, marker_dst)
+    
     while not q: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
                 q = True
             if event.type == pygame.MOUSEBUTTONUP:
-                pos =  m.translate_pos_back(event.pos)
-                closest_id = closestpoint.manhattan(city_graph.vertex ,pos, 50)
-                print "found closest pair", closest_id
+                if event.button == 1:#left click
+                    pos =  m.translate_pos_back(event.pos)
+                    selected_ids[0] = closestpoint.manhattan(vertex ,pos, 10)
+                    print "closest id", selected_ids[0]
+                    marker_src = vertex[selected_ids[0]][0]
+                elif event.button == 3:
+                    pos =  m.translate_pos_back(event.pos)
+                    selected_ids[1] = closestpoint.manhattan(vertex ,pos, 10)
+                    print "closest id", selected_ids[1]                    
+                    marker_dst = vertex[selected_ids[1]][0]
+                    should_draw = True
+                elif event.button == 2:
+                    marker_src = None
+                    marker_dst = None
+                    should_draw = False
+                    route = []
                 
-                if path_turn:
-                    path_point_id[0] = closest_id
-                else : path_point_id[1] = closest_id
-                path_turn = not path_turn
+                if should_draw:
+                    (route_len, route_id) = path_finder.Astar(selected_ids[0], selected_ids[1])
+                    route = []
+                    if route_id:
+                        for i in route_id:
+                            route.append(vertex[i][0])                      
+                        print "len(path)", len(route)
+                    print "path length", route_len
+                m.update(route, marker_src, marker_dst)
+                    
+                    
+#                pos =  m.translate_pos_back(event.pos)
+#                closest_id = closestpoint.manhattan(city_graph.vertex ,pos, 50)
+#                print "found closest pair", closest_id
+#                
+#                if path_turn:
+#                    path_point_id[0] = closest_id
+#                else : path_point_id[1] = closest_id
+#                path_turn = not path_turn
                 
 #                if path_turn:#we have set two points time to begin the fun!
 #                    print "path finder result"
@@ -434,7 +520,7 @@ def main():
                     m.move_to('right')
                 elif event.key == pygame.K_LEFT:
                     m.move_to('left') 
-                m.update(route)
+                m.update(route, marker_src, marker_dst)
 
     pygame.quit()
     

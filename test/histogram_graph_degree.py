@@ -45,4 +45,4 @@ class Hist():
                 
 h = Hist("../path/path.data")
 print "zeros", h.count_zero()
-h.plot([0,4,8,10,13,15])
+h.plot([0,4,8,10,13,15,20,25, 30])
